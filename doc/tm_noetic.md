@@ -128,9 +128,9 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 > Then, run the driver to maintain the connection with TM Robot by typing 
 >
 >```bash
-> rosrun tm_driver tm_driver robot_ip:=<robot_ip_address>
+> rosrun tm_driver tm_driver <robot_ip_address>
 >```
-> Example :``rosrun tm_driver tm_driver robot_ip:=192.168.10.2``, if the <robot_ip_address> is 192.168.10.2
+> Example :``rosrun tm_driver tm_driver 192.168.10.2``, if the <robot_ip_address> is 192.168.10.2
 >
 > Now, the user can use a new terminal to run each ROS node or command but don't forget to source the correct setup shell files as starting a new terminal.
 >

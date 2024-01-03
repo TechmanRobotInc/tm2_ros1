@@ -54,7 +54,7 @@ This chapter describes a simplified GUI for displaying tm_driver connection stat
 ``roscore``<br/>
 > 6. In a new terminal 2: Source setup.bash in the workspace path and run the driver to connect to TM Robot by typing<br/>
 ``source ./devel/setup.bash``<br/>
-``rosrun tm_driver tm_driver robot_ip:=<robot_ip_address>``<br/>
+``rosrun tm_driver tm_driver <robot_ip_address>``<br/>
 The <robot_ip_address> is the IP address of the TM Robot, the user can get it through TM Flow, for example, 192.168.10.2<br/>
 > 7. In another new terminal 3: Source setup.bash in the workspace path and start GUI debug by typing<br/>
 ``source ./devel/setup.bash``<br/>
