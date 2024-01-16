@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+   Usage: Spawn a Techman robot model in the Rviz.
+   Syntax: The prefix <tm_robot_type> means the TM Robot type
+           $ roslaunch tm_description <tm_robot_type>_upload.launch
+           $ roslaunch tm_description view_robot.launch
+   Example: TM12S Techman robot model
+   Terminal 1:  [key-in] shell cmd $ roslaunch tm_description tm12s_upload.launch
+   Terminal 2:  [key-in] shell cmd $ roslaunch tm_description view_robot.launch
+-->
+<launch>
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tm_description)/rviz/view_robot.rviz" required="true" />
+</launch>
