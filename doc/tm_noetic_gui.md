@@ -59,6 +59,7 @@ The <robot_ip_address> is the IP address of the TM Robot, the user can get it th
 > 7. In another new terminal 3: Source setup.bash in the workspace path and start GUI debug by typing<br/>
 ``source ./devel/setup.bash``<br/>
 ``rosrun tm_inspect robot_ui``<br/>
+**Note**: When you are finished, press CTRL + C in all terminal windows to shut everything down.<br/>
 >
 >
 <br/>

@@ -122,6 +122,13 @@ This chapter describes that the user can use a script program to extract specifi
 **Note 2**: The tm_description package contains description files and meshes, available for the TM12S model, and some Cobot models will be added later.
 <div> </div>
 
-## __7. Contact us / Technical support__
+## __7. Related ROS Projects and Tutorials Usage__
+&#10148; For example, you can try to run __MoveIt__ on the TM robot
+The user can use MoveIt to control the TM robot in the motion planning to plan paths or run the TM Robot simulation into your scene description for operations such as _collision checking_ or _obstacle avoidance_.
+See [Moveit tutorial](https://ros-planning.github.io/moveit_tutorials/) to install the MoveIt packages.<br/>
+- [Usage Guideline](./doc/tm_noetic_extension.md)
+<div> </div>
+
+## __8. Contact us / Technical support__
 More Support & Service, please contact us. [@TECHMAN ROBOT](https://www.tm-robot.com/zh-hant/contact-us/)``[https://www.tm-robot.com/zh-hant/contact-us/] ``<br/>
 <div> </div>
