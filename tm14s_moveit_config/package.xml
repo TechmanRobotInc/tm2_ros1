@@ -1,14 +1,14 @@
 <package>
 
   <name>tm14s_moveit_config</name>
-  <version>0.3.0</version>
+  <version>0.3.1</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the tm14s with the MoveIt! Motion Planning Framework
   </description>
   <author email="yh.wang@tm-robot.com">Yh Wang</author>
   <maintainer email="yh.wang@tm-robot.com">Yh Wang</maintainer>
 
-  <license>BSD</license>
+  <license>BSD 3-clause</license>
 
   <url type="website">http://moveit.ros.org/</url>
   <url type="bugtracker">https://github.com/ros-planning/moveit/issues</url>

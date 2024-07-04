@@ -10,12 +10,12 @@
     wrist_1_joint_lower_limit:=${radians(-360)}    wrist_1_joint_upper_limit:=${radians(360)}
     wrist_2_joint_lower_limit:=${radians(-360)}    wrist_2_joint_upper_limit:=${radians(360)}
     wrist_3_joint_lower_limit:=${radians(-360)}    wrist_3_joint_upper_limit:=${radians(360)}
-    shoulder_1_joint_velocity_limit:=${radians(240)}
-    shoulder_2_joint_velocity_limit:=${radians(240)}
-    elbow_joint_velocity_limit:=${radians(240)}
-    wrist_1_joint_velocity_limit:=${radians(260)}
-    wrist_2_joint_velocity_limit:=${radians(260)}
-    wrist_3_joint_velocity_limit:=${radians(520)}
+    shoulder_1_joint_velocity_limit:=${radians(210)}
+    shoulder_2_joint_velocity_limit:=${radians(210)}
+    elbow_joint_velocity_limit:=${radians(210)}
+    wrist_1_joint_velocity_limit:=${radians(225)}
+    wrist_2_joint_velocity_limit:=${radians(225)}
+    wrist_3_joint_velocity_limit:=${radians(450)}
     shoulder_1_joint_effort_limit:=${170}
     shoulder_2_joint_effort_limit:=${170}
     elbow_joint_effort_limit:=${170}
@@ -51,11 +51,11 @@
     <xacro:property name="mass_6" value="0.720" />
 
     <xacro:property name="unit_factor" value="0.000001"/>
-    <xacro:property name="ixx_1" value="${8439.2993*unit_factor}" /> 
+    <xacro:property name="ixx_1" value="${8439.2993*unit_factor}" />
     <xacro:property name="ixx_2" value="${29227.499*unit_factor}" />
     <xacro:property name="ixx_3" value="${4173.2753*unit_factor}" />
-    <xacro:property name="ixx_4" value="${2046.0318*unit_factor}" />  
-    <xacro:property name="ixx_5" value="${2046.0318*unit_factor}" />   
+    <xacro:property name="ixx_4" value="${2046.0318*unit_factor}" />
+    <xacro:property name="ixx_5" value="${2046.0318*unit_factor}" />
     <xacro:property name="ixx_6" value="${703.44734*unit_factor}" />
 
     <xacro:property name="iyy_1" value="${13793.964*unit_factor}" />

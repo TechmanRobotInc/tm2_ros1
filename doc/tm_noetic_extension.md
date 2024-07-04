@@ -18,11 +18,19 @@
 >```
 > Example :``rosrun tm_driver tm_driver 192.168.10.2``, if the <robot_ip_address> is 192.168.10.2
 >
-> Now, the user can use a new terminal to run each ROS node or command but don't forget to source the correct setup shell files as starting a new terminal.
+> Now, the user can use a new terminal to run each ROS node or command, but don't forget to source the correct setup shell files as starting a new terminal.
 
 ## &sect; Usage with MoveIt
 >
-> See [Moveit tutorial](https://ros-planning.github.io/moveit_tutorials/) to install the MoveIt packages.<br/>
+> See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt packages.<br/>
+> ```bash
+> sudo apt install ros-noetic-moveit
+> ```
+>
+> Then, use the following command to install ROS-Industrial packages on Ubuntu, working with ROS Noetic:
+> ```bash
+> sudo apt-get install ros-noetic-industrial-robot-simulator
+> ```
 >
 > :bulb: Do you prepare the __TM Robot__ ready ? Make sure that TM Robot's operating software (__TMflow__) network settings are ready and the __Listen node__ is running.<br/>
 >
