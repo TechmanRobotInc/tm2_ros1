@@ -125,7 +125,7 @@ This chapter describes that the user can use a script program to extract specifi
 ## __7. Related ROS Projects and Tutorials Usage__
 &#10148; For example, you can try to run __MoveIt__ on the TM robot
 The user can use MoveIt to control the TM robot in the motion planning to plan paths or run the TM Robot simulation into your scene description for operations such as _collision checking_ or _obstacle avoidance_.
-See [Moveit tutorial](https://ros-planning.github.io/moveit_tutorials/) to install the MoveIt packages.<br/>
+See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt packages.<br/>
 - [Usage Guideline](./doc/tm_noetic_extension.md)
 <div> </div>
 
