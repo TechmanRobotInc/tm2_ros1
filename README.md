@@ -128,7 +128,8 @@ The user can use MoveIt to control the TM robot in the motion planning to plan p
 See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt packages.<br/>
 - [Usage Guideline](./doc/tm_noetic_extension.md)
 
-**Note**: Some packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
+**Note 1**: Some packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
+**Note 2**: Some packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
 <div> </div>
 
 ## __8. Contact us / Technical support__
