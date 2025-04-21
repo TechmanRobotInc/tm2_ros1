@@ -19,8 +19,8 @@ The TM ROS driver connects to _TMflow Ethernet Slave_ to control _TMflow_ projec
 &#10146; <sup>4</sup>  __Techman Robot Expression__ (defined protocol) is the programming language of Techman Robot applicable to Flow programming projects and Script programming projects.<br/>
 >
 Some relevant references [Docs](https://www.tm-robot.com/en/docs/introducing-tmflow-2-14/):
-> :bookmark_tabs: The user can download the new "_Expression Editor Manual_" or "_Embedded TM ROS Driver User Manual ([2.14_Rev1.0](https://www.tm-robot.com/en/download-center/#3100-4746-wpfd-embedded-tm-ros-driver-manual))_ " from [TM Download Center](https://www.tm-robot.com/zh-hant/download-center/) or [Contact us](https://www.tm-robot.com/zh-hant/contact-us/).<br/>
 > :bookmark_tabs: The _Expression Editor_ version changes may have slightly different settings. (Several old versions for reference: ([Expression Editor_1.88_Rev1.00](https://www.tm-robot.com/zh-hant/wpfd_file/expression-editor_1-88_rev1-00_en/)) ([1.84_Rev1.00](https://www.tm-robot.com/zh-hant/wpfd_file/expression-editor-and-listen-node_1-84_rev1-00_en-2/))<br/>
+> :bookmark_tabs: The user can download the new "_Expression Editor Manual_" from [TM Download Center](https://www.tm-robot.com/en/download-center/) or [Contact us](https://www.tm-robot.com/en/contact-us/).<br/>
 
 TM ROS Driver consists of three main parts: Topic Publisher, Service Server, and Action Server: 
 
@@ -55,7 +55,6 @@ The _Topic Publisher_ connects to _TMflow_ through the Ethernet slave, collects 
 
 The TM ROS driver is designed to interface the TM Robot's operating software (_TMflow_) with the Robot Operating System (ROS) so that program developers and researchers can build and reuse their own programs to control the TM robot externally.<br/>
 [![TM ROS Driver](https://markdown-videos.vercel.app/youtube/LuKE2wVNn5Y)](https://youtu.be/LuKE2wVNn5Y)[![TM AI Cobot](https://markdown-videos.vercel.app/youtube/EG3v1KbxLoM.gif)](https://youtu.be/EG3v1KbxLoM.gif)<br/>
-In __TMflow 2__ software, in addition to the old method of installing TM ROS drivers from GitHub on a Linux-based computer to start externally, we also support TM ROS driver embedded and based on ROS2 Foxy in Robot Controller via __TMflow 2__. It makes it easier for users to start ROS and run the driver to connect TM Robot on the TMflow 2 Setting UI interface and try to improve performance.<br/>
 
 If the user wants to know how to use the TM ROS driver, please visit the TM ROS APP website or directly click the TM ROS APP version listed in the table below.
 
@@ -67,31 +66,31 @@ If the user wants to know how to use the TM ROS driver, please visit the TM ROS 
     </tr>
     <tr>
         <th>ROS Distro</th>
-        <th>TM ROS APP version</th>
+        <th>GitHub repo: TM 2 App Release</th>
         <th>TM ROS Driver</th>
         <th>TMvision Support</th>
-        <th>Embedded TM ROS Driver</th>
+        <th>GitHub Branch</th>
     </tr>
     <tr>
         <td><a href="http://wiki.ros.org/noetic">ROS Noetic Ninjemys</a></td>
         <td><a href="https://github.com/TechmanRobotInc/tm2_ros1">TM2 ROS1 Noetic</a></td>
         <th>&#9711;</th>
         <th>&#9711;</th>
-        <th>&#10005;&nbsp</th>
+        <th>noetic</th>
     </tr>
     <tr>
         <td><a href="https://index.ros.org/doc/ros2/Releases/Release-Foxy-Fitzroy/">ROS 2 Foxy Fitzroy</a></td>
         <td><a href="https://github.com/TechmanRobotInc/tm2_ros2">TM2 ROS2 Foxy</a></td>
         <th>&#9711;</th>
         <th>&#9711;</th>
-        <th>DDS FastRTPS</th>
+        <th>foxy</th>
     </tr>
     <tr>
         <td><a href="https://docs.ros.org/en/humble/index.html">ROS 2 Humble Hawksbill</a></td>
         <td><a href="https://github.com/TechmanRobotInc/tm2_ros2/tree/humble">TM2 ROS2 Humble</a></td>
         <th>&#9711;</th>
         <th>&#9711;</th>
-        <th>DDS FastRTPS</th>
+        <th>humble</th>      
     </tr>
 </table>
 
@@ -99,10 +98,9 @@ If the user wants to know how to use the TM ROS driver, please visit the TM ROS 
 
 - [Usage Guideline](./doc/tm_noetic.md)
 
-
-> :bookmark_tabs: Since communicating with ROS1 applications, only the installation method of the external TM ROS1 driver can be used.<br/>
-> :bookmark_tabs: Using _TMflow_, especially the Listen Nodes and Vision Nodes (external detection). Please refer to _Software Manual TMflow ([SW2.14_Rev1.00](https://www.tm-robot.com/zh-hant/wpfd_file/software-manual-tmflow_sw2-14_rev1-00_en/))_  and _Software Manual TMvision ([SW2.14_Rev1.00](https://www.tm-robot.com/zh-hant/wpfd_file/software-manual-tmvision_sw2-14_rev1-00_en/))_ for more details.<br/>
-> :bookmark_tabs: Using _TMscript_ (expressions, the Listen Node commands, etc.). Please refer to the Manual: [Programming Language TMscript](https://www.tm-robot.com/zh-hant/wpfd_file/programming-language-tmscript_rev1-00_en/) for more details.<br/>
+> :bookmark_tabs: This repository only supports the _External TM ROS Driver_ and related packages. For the _Embedded TM ROS Driver_, please refer to the Embedded TM ROS Driver User Manual _[2.14](https://www.tm-robot.com/en/download-center/#3100-4746-wpfd-embedded-tm-ros-driver-manual)_ for more details, and download the corresponding support package[s](https://www.tm-robot.com/en/download-center/#3100-4745-wpfd-embedded-tm-ros-driver) from the [TM Download Center](https://www.tm-robot.com/en/download-center/).<br/>
+> :bookmark_tabs: Using _TMflow_, especially the Listen Nodes and Vision Nodes (external detection), please refer to _Software Manual TMflow ([SW2.14](https://www.tm-robot.com/zh-hant/wpfd_file/software_tmflow_sw2-14_rev1-01_en/))_  and _Software Manual TMvision ([SW2.14](https://www.tm-robot.com/zh-hant/wpfd_file/software_tm-3dvision_sw2-14_rev1-00_en/))_ for more details.<br/>
+> :bookmark_tabs: Using _TMscript_ (expressions, the Listen Node commands, etc.), please refer to the Manual: [Programming Language TMscript](https://www.tm-robot.com/zh-hant/wpfd_file/programming-language-tmscript_2-20_rev1-0_en/) for more details.<br/>
   
 <div> </div>
 
@@ -135,10 +133,10 @@ See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt pac
 - [Usage Guideline](./doc/tm_noetic_extension.md)
 
 > [!TIP]  
-> 1. Some packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
-> 2. Some packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
+> 1. Some software packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
+> 2. Some software packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for the TM5S, TM7S, TM12S, TM14S, and TM25S models.<br/>
 <div> </div>
 
 ## __8. Contact us / Technical support__   [![Email](https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:tmsales@tm-robot.com)
-More Support & Service, please contact us. [@TECHMAN ROBOT](https://www.tm-robot.com/zh-hant/contact-us/)``[https://www.tm-robot.com/zh-hant/contact-us/] ``<br/>
+More Support & Service, please contact us. [@TECHMAN ROBOT](https://www.tm-robot.com/en/contact-us/)``[https://www.tm-robot.com/en/contact-us/] ``<br/>
 <div> </div>
