@@ -47,7 +47,7 @@ This chapter describes that the user can use a script program to extract specifi
 > ```
 > The parameter `<robot_ip_address>` means the IP address of your TM Robot, the user can get it through TM Flow.<br/>
 > 
-> 3. In another new terminal: Source setup.bash in the workspace path, change the current directory to the directory path of the Python script to get the specific kinematic parameters of your TM Robot, and then enter the specified command format to generate a new name by the <urdf_gen> argument, for example, named user_defined.<br/>
+> 3. In another new terminal 3: Source setup.bash in the workspace path, change the current directory to the directory path of the Python script to get the specific kinematic parameters of your TM Robot, and then enter the specified command format to generate a new name by the <urdf_gen> argument, for example, named user_defined.<br/>
 > 
 > ```bash
 > source /opt/ros/noetic/setup.bash
