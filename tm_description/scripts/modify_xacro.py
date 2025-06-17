@@ -2,15 +2,11 @@
 import os
 import shutil
 import sys
-
 import xml.etree.cElementTree as ET
 
 import rospy
 
-# from _modify_urdf import *
-from _modify_urdf import modify_urdf
-from _modify_urdf import urdf_DH_from_tm_DH
-from _modify_urdf import xyzrpys_from_urdf_DH
+from _modify_urdf import modify_urdf, urdf_DH_from_tm_DH, xyzrpys_from_urdf_DH
 from tm_msgs.srv import AskItem
 
 
@@ -39,7 +35,8 @@ def _gen_xacro():
     tm7s_nominal_restore = False
     tm12s_nominal_restore = False
     tm14s_nominal_restore = False
-    tm25s_nominal_restore = False    
+    tm25s_nominal_restore = False
+    tm30s_nominal_restore = False
     tm_model = 'reference'
     ###############################################################################################
     # You can restore some nominal kinematic parameters by using specific keyword settings
@@ -64,10 +61,14 @@ def _gen_xacro():
     elif new_model == 'tm25s-nominal' or specific_w == '-K25S':
         tm_model = 'tm25s-nominal'
         nominal_model_restore = True
-        tm25s_nominal_restore = True           
+        tm25s_nominal_restore = True
+    elif new_model == "tm30s-nominal" or specific_w == '-K30S':
+        tm_model = "tm30s-nominal"
+        nominal_model_restore = True
+        tm30s_nominal_restore = True
     else:
         nominal_model_restore = False
-    if nominal_model_restore is True:
+    if nominal_model_restore:
         message_s0 = 'Notice! You have chosen to restore a ' + tm_model + ' xacro model file'
         rospy.loginfo('%s!' % message_s0)
     if specific_w == '-OW':
@@ -79,7 +80,7 @@ def _gen_xacro():
     rospy.wait_for_service('tm_driver/ask_item')
     ask_item = rospy.ServiceProxy('tm_driver/ask_item', AskItem)
 
-    # Notice !!! You must have finished to run the driver to connect to youur TM Robot before.
+    # Notice !!! You must have finished running the driver to connect to your TM Robot before.
     # [svr] (ask_item) -> id:dh (DHTable),id:dd (DeltaDH)
     res_dh = ask_item('dh', 'DHTable', 1.0)
     res_dd = ask_item('dd', 'DeltaDH', 1.0)
@@ -102,26 +103,30 @@ def _gen_xacro():
 
     ###############################################################################################
     # You can restore some nominal kinematic parameters by using specific keyword settings
-    if nominal_model_restore is True:
-        if tm5s_nominal_restore is True:
+    if nominal_model_restore:
+        if tm5s_nominal_restore:
             rospy.loginfo('Restore with TM5S nominal kinematics parameters')
             res_dh = 'DHTable={0,-90,0,148.4,0,-360,360,-90,0,429,0,0,-360,360,0,0,386,0,0,-158,158,90,90,0,-147.8,0,-360,360,0,90,0,131.5,0,-360,360,0,0,0,134.95,0,-360,360}'
             res_dd = 'DeltaDH={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}'
-        elif tm7s_nominal_restore is True:
+        elif tm7s_nominal_restore:
             rospy.loginfo('Restore with TM7S nominal kinematics parameters')
             res_dh = 'DHTable={0,-90,0,148.4,0,-360,360,-90,0,329,0,0,-360,360,0,0,298,0,0,-152,152,90,90,0,-147.8,0,-360,360,0,90,0,131.5,0,-360,360,0,0,0,134.95,0,-360,360}'
             res_dd = 'DeltaDH={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}'
-        elif tm12s_nominal_restore is True:
+        elif tm12s_nominal_restore:
             rospy.loginfo('Restore with TM12S nominal kinematics parameters')
             res_dh = 'DHTable={0,-90,0,165.2,0,-360,360,-90,0,636.1,0,0,-360,360,0,0,532.4,0,0,-162,162,90,90,0,-181.8,0,-360,360,0,90,0,131.5,0,-360,360,0,0,0,134.95,0,-360,360}'
             res_dd = 'DeltaDH={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}'
-        elif tm14s_nominal_restore is True:
+        elif tm14s_nominal_restore:
             rospy.loginfo('Restore with TM14S nominal kinematics parameters')
             res_dh = 'DHTable={0,-90,0,165.2,0,-360,360,-90,0,536.1,0,0,-360,360,0,0,432.4,0,0,-159,159,90,90,0,-181.8,0,-360,360,0,90,0,131.5,0,-360,360,0,0,0,134.95,0,-360,360}'
             res_dd = 'DeltaDH={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}'
-        elif tm25s_nominal_restore is True:
+        elif tm25s_nominal_restore:
             rospy.loginfo('Restore with TM25S nominal kinematics parameters')
-            res_dh = 'DHTable={0,-90,0,235.0,0,-360,360,-90,0,890.0,0,0,-360,360,90,90,0,-70.0,0,-166,166,0,-90,0,660.0,0,-360,360,0,90,0,170.2,0,-360,360,0,0,0,152.95,0,-360,360}'
+            res_dh = 'DHTable={0,-90,0,235.0,0,-360,360,-90,0,950.0,0,0,-360,360,90,90,0,-70.0,0,-166,166,0,-90,0,660.0,0,-360,360,0,90,0,170.2,0,-360,360,0,0,0,152.95,0,-360,360}'
+            res_dd = 'DeltaDH={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}'
+        elif tm30s_nominal_restore:
+            rospy.loginfo('Restore with TM30S nominal kinematics parameters')
+            res_dh = 'DHTable={0,-90,0,235.0,0,-360,360,-90,0,890.0,0,0,-360,360,90,90,0,-70.0,0,-170,170,0,-90,0,800.0,0,-360,360,0,90,0,170.2,0,-360,360,0,0,0,152.95,0,-360,360}'
             res_dd = 'DeltaDH={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}'
         else:
             # Example: TM5S nominal kinematics parameters
@@ -161,6 +166,7 @@ def _gen_xacro():
         if dirpath.endswith('tm_description'):
             xacro_path = dirpath + '/xacro'
             break
+
     if (xacro_path == ''):
         rospy.logerr('xacro directory not found')
         return

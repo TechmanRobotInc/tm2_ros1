@@ -1,11 +1,9 @@
-
 import math
 
 # from xml.etree import ElementTree
 # import xml.etree.cElementTree as ET
 
 import numpy as np
-
 
 # always print floating point numbers using fixed point notation
 # np.set_printoptions(suppress=True)
@@ -169,7 +167,6 @@ def pretty_xml(element, indent, newline, level=0):
 
 
 def modify_urdf(root, xyzs, rpys, udh, prefix=''):
-
     for elem in root.findall('joint'):
         for index in elem.attrib:
             if index == 'name' and elem.attrib[index] == prefix + 'base_fixed_joint':
