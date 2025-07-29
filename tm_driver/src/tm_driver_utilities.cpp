@@ -8,7 +8,7 @@ void DispatchQueue::put(std::function<void()> op) {
 
 std::function<void()> DispatchQueue::take() {
   std::unique_lock<std::mutex> lock(qlock);
-  empty.wait(lock, [&]{ return !cmdQueue.empty(); });
+  empty.wait(lock, [&] { return !cmdQueue.empty(); });
 
   std::function<void()> op = cmdQueue.front();
   cmdQueue.pop();
@@ -16,10 +16,11 @@ std::function<void()> DispatchQueue::take() {
 }
 
 ActiveObject::ActiveObject() : val(0), done(false) { 
-  runnable = new std::thread(&ActiveObject::run, this); 
+  runnable = new std::thread(&ActiveObject::run, this);
 }
+
 ActiveObject::~ActiveObject() { 
-  runnable->join(); 
+  runnable->join();
 }
 
 void ActiveObject::run() {
@@ -27,6 +28,7 @@ void ActiveObject::run() {
    dispatchQueue.take()();
   }
 }
+
 void ActiveObject::set_function(std::function<void()> func) {
   dispatchQueue.put(func);
-}  
+}

@@ -6,7 +6,7 @@
 
 cv::Mat image(320,480,CV_8UC3);
 
-int encoding_to_mat_type(const std::string & encoding){
+int encoding_to_mat_type(const std::string & encoding) {
   if (encoding == "mono8") {
     return CV_8UC1;
   } else if (encoding == "bgr8") {
@@ -21,17 +21,17 @@ int encoding_to_mat_type(const std::string & encoding){
     return CV_32FC1;
   } else if (encoding == "rgb8") {
     return CV_8UC3;
-  }else if (encoding =="8UC3"){
+  } else if (encoding =="8UC3") {
     return CV_8UC3;
   }
   else {
-    std::cout<<"the unknow image type is "<<encoding<<std::endl;
+    std::cout << "the unknow image type is " << encoding << std::endl;
     throw std::runtime_error("Unsupported encoding type");
   }
 }
 
-void imageCallback(const sensor_msgs::ImageConstPtr& msg){
-  try{
+void imageCallback(const sensor_msgs::ImageConstPtr& msg) {
+  try {
     cv::Mat frame(msg->height, msg->width, encoding_to_mat_type(msg->encoding),
       const_cast<unsigned char *>(msg->data.data()), msg->step);
     if (msg->encoding == "rgb8") {
@@ -42,19 +42,19 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg){
     frame.copyTo(image);
     std::cout<<"after setting image to frame";
   }
-  catch(std::runtime_error &exception){
+  catch(std::runtime_error &exception) {
     std::cout<<"there is an exception "<< exception.what()<< std::endl;
   }
 }
 
-void show_image(){
-  while(true){
+void show_image() {
+  while(true) {
     cv::imshow("showimage",image );
     cv::waitKey(30);
   }
 }
 
-int main(int argc, char **argv){
+int main(int argc, char **argv) {
   ros::init(argc, argv, "image_listener");
   ros::NodeHandle nh;
 

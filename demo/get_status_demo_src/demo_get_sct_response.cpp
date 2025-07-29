@@ -19,5 +19,5 @@ int main(int argc, char **argv)
   ros::Subscriber sub = nh_demo_get.subscribe("tm_driver/sct_response", 1000, SctResponseCallback);
   ros::spin();
 
-  return 0;  		  	  		
+  return 0;
 }

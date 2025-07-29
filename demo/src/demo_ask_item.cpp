@@ -11,23 +11,23 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "demo_ask_item");      
+  ros::init(argc, argv, "demo_ask_item");
   ros::NodeHandle nh_demo; 
   ros::ServiceClient client = nh_demo.serviceClient<tm_msgs::AskItem>("tm_driver/ask_item");
   tm_msgs::AskItem srv;
 
-  //Request 
+  // Request 
   srv.request.id = "demo";
   srv.request.item = "Project_Speed";
   srv.request.wait_time = 1;
 
   // Wait for the result.
-  if (client.call(srv))                             
+  if (client.call(srv))
   {
     if (srv.response.ok) {
       ROS_INFO_STREAM("AskItem to robot: id is " << srv.response.id << ", value is " << srv.response.value);
-    }    	
-    else { 
+    }
+    else {
       ROS_WARN_STREAM("AskItem to robot , but response not yet ok ");
     }
   }

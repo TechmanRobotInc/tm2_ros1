@@ -3,8 +3,8 @@
 
 #ifndef TM_PRINT_H
 #define TM_PRINT_H
-#include <string>
 
+#include <string>
 
 void set_up_print_debug_function(void (*function_print)(char* fmt));
 void set_up_print_info_function(void (*function_print)(char* fmt));
@@ -26,8 +26,7 @@ const std::string PRINT_YELLOW("\033[1;33m");
 const std::string PRINT_CYAN("\033[0;36m");
 const std::string PRINT_RESET("\033[0m");
 
-
-/*int (*print_info_function)(const char* fmt, ...);
+/* int (*print_info_function)(const char* fmt, ...);
 int (*print_warn_function)(const char* fmt, ...);
 int (*print_error_function)(const char* fmt, ...);
 int (*print_fatal_function)(const char* fmt, ...);

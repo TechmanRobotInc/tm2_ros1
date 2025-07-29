@@ -1,4 +1,5 @@
 #include"../../include/tm_driver/tm_driver.h"
+
 class ListenNodeConnection{
  private:
   std::thread listenNodeThread;
@@ -19,8 +20,8 @@ class ListenNodeConnection{
   int sct_reconnect_timeout_ms_ = 1000;
   int sct_reconnect_timeval_ms_ = 3000;
   bool firstEnter = true;
-  std::string staSubcmd ;
-  std::string staSubdata ;
+  std::string staSubcmd;
+  std::string staSubdata;
   bool isRun;
 
   void listen_node_connect();

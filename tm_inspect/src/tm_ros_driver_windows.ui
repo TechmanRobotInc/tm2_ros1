@@ -210,10 +210,10 @@
      <property name="styleSheet">
       <string notr="true">        QGroupBox {
             border-color: rgb(50, 50, 50);
-            border: 2px solid lightgray; 
+            border: 2px solid lightgray;
             border-width: 0.5px;
             border-style: solid;
-            margin-top: 1ex; /* leave space at the top for the title */ 
+            margin-top: 1ex; /* leave space at the top for the title */
         }
         QGroupBox::title {
             subcontrol-origin: margin;
@@ -411,10 +411,10 @@
        <property name="styleSheet">
         <string notr="true">        QGroupBox {
             border-color: rgb(50, 50, 50);
-            border: 2px solid lightgray; 
+            border: 2px solid lightgray;
             border-width: 0.5px;
             border-style: solid;
-            margin-top: 1ex; /* leave space at the top for the title */ 
+            margin-top: 1ex; /* leave space at the top for the title */
         }
         QGroupBox::title {
             subcontrol-origin: margin;
@@ -968,10 +968,10 @@
        <property name="styleSheet">
         <string notr="true">        QGroupBox {
             border-color: rgb(50, 50, 50);
-            border: 2px solid lightgray; 
+            border: 2px solid lightgray;
             border-width: 0.5px;
             border-style: solid;
-            margin-top: 1ex; /* leave space at the top for the title */ 
+            margin-top: 1ex; /* leave space at the top for the title */
         }
         QGroupBox::title {
             subcontrol-origin: margin;
@@ -1088,10 +1088,10 @@
        <property name="styleSheet">
         <string notr="true">        QGroupBox {
             border-color: rgb(50, 50, 50);
-            border: 2px solid lightgray; 
+            border: 2px solid lightgray;
             border-width: 0.5px;
             border-style: solid;
-            margin-top: 1ex; /* leave space at the top for the title */ 
+            margin-top: 1ex; /* leave space at the top for the title */
         }
         QGroupBox::title {
             subcontrol-origin: margin;
@@ -1247,10 +1247,10 @@
      <property name="styleSheet">
       <string notr="true">        QGroupBox {
             border-color: rgb(50, 50, 50);
-            border: 2px solid lightgray; 
+            border: 2px solid lightgray;
             border-width: 0.5px;
             border-style: solid;
-            margin-top: 1ex; /* leave space at the top for the title */ 
+            margin-top: 1ex; /* leave space at the top for the title */
         }
         QGroupBox::title {
             subcontrol-origin: margin;

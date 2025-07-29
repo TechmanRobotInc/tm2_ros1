@@ -16,6 +16,7 @@ public:
         quat.setRPY(vec[3], vec[4], vec[5]);
         T.setRotation(quat);
     }
+
     static inline void vec_from_tf(std::vector<double> &vec, const tf::Transform &T)
     {
         const tf::Vector3 &P = T.getOrigin();
@@ -41,10 +42,12 @@ public:
         quat.setRPY(r, p, y);
         tf::quaternionTFToMsg(quat, msg);
     }
+
     static inline void quat_msg_from_rpy(geometry_msgs::Quaternion &msg, const std::vector<double> &vec)
     {
         if (vec.size() == 3) quat_msg_from_rpy(msg, vec[0], vec[1], vec[2]);
     }
+
     static inline void msg_from_vec(geometry_msgs::Pose &msg, const std::vector<double> &vec)
     {
         if (vec.size() != 6) return;
@@ -53,11 +56,13 @@ public:
         msg.position.z = vec[2];
         quat_msg_from_rpy(msg.orientation, vec[3], vec[4], vec[5]);
     }
+
     static inline void rpy_from_quat_msg(double &r, double &p, double &y, const geometry_msgs::Quaternion &msg)
     {
         tf::Matrix3x3 rot(tf::Quaternion(msg.x, msg.y, msg.z, msg.w));
         rot.getRPY(r, p, y);
     }
+
     static inline void rpy_from_quat_msg(std::vector<double> &vec, const geometry_msgs::Quaternion &msg)
     {
         double r, p, y;
@@ -67,6 +72,7 @@ public:
         vec[1] = p;
         vec[2] = y;
     }
+
     static inline void vec_from_msg(std::vector<double> &vec, const geometry_msgs::Pose &msg)
     {
         double r, p, y;
@@ -79,5 +85,4 @@ public:
         vec[4] = p;
         vec[5] = y;
     }
-
 };

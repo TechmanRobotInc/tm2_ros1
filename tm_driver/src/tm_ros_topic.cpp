@@ -29,8 +29,8 @@ void TmRosNode::publish_fbs()
       pm.svr_msg.error_code = false;
       iface_.sct.tmSctErrData.set_CPError(TmCPError::Code::Ok);
       iface_.sct.sct_data.set_sct_data_has_error(false);
-    }    
-   
+    }
+
     pm.fbs_msg.max_not_connect_in_s = maxNotConnectTimeInS;
     pm.fbs_msg.disconnection_times = diconnectTimes;
 
@@ -77,7 +77,7 @@ void TmRosNode::publish_fbs()
     pm.joint_pub.publish(pm.joint_msg);
 
     // Publish tool pose
-    //TmPoseConversion::msg_from_vec(pm.tool_pose_msg.pose, pm.fbs_msg.tool_pose);
+    // TmPoseConversion::msg_from_vec(pm.tool_pose_msg.pose, pm.fbs_msg.tool_pose);
     auto &pose = pm.fbs_msg.tool_pose;
     tf::Quaternion quat;
     quat.setRPY(pose[3], pose[4], pose[5]);
@@ -85,7 +85,7 @@ void TmRosNode::publish_fbs()
     tf::poseTFToMsg(Tbt, pm.tool_pose_msg.pose);
     pm.tool_pose_msg.header.stamp = pm.joint_msg.header.stamp;
     pm.tool_pose_msg.header.frame_id = base_frame_name_;
-    /*pm.tool_pose_msg.pose.position.x = pose[0];
+    /* pm.tool_pose_msg.pose.position.x = pose[0];
     pm.tool_pose_msg.pose.position.y = pose[1];
     pm.tool_pose_msg.pose.position.z = pose[2];
     pm.tool_pose_msg.pose.orientation.x = quat.x();
@@ -101,9 +101,9 @@ void TmRosNode::publish_fbs()
     pm.tfbc.sendTransform(tf::StampedTransform(
         Tbt, pm.joint_msg.header.stamp, base_frame_name_, tool_frame_name_));
 }
-void TmRosNode::pub_data(){
-  while(isRun){
-    
+void TmRosNode::pub_data() {
+  while(isRun) {
+
     ethernetSlaveConnection->renew_all_data();
 
     publish_fbs();
@@ -126,22 +126,22 @@ void TmRosNode::publish_svr()
     svr_cond_.notify_all();
 
     if ((int)(pm.svr_msg.error_code) != 0) {
-        ROS_ERROR_STREAM("TM_ROS: (TM_SVR): MSG (" << pm.svr_msg.id << ") (" << (int)(pm.svr_msg.mode) << ") " << pm.svr_msg.content);  	
+        ROS_ERROR_STREAM("TM_ROS: (TM_SVR): MSG (" << pm.svr_msg.id << ") (" << (int)(pm.svr_msg.mode) << ") " << pm.svr_msg.content);      
         ROS_ERROR_STREAM("TM_ROS: (TM_SVR) ROS Node Data Error" << (int)(pm.svr_msg.error_code));
     }
     else {
         ROS_INFO_STREAM("TM_ROS: (TM_SVR): MSG  (" << pm.svr_msg.id << ") (" << (int)(pm.svr_msg.mode) << ") " << pm.svr_msg.content);
-    }    
-    
+    }
+
     pm.svr_msg.header.stamp = ros::Time::now();
     pm.svr_pub.publish(pm.svr_msg);
 }
 void TmRosNode::svr_connect_recover()
 {
-    TmSvrCommunication &svr = iface_.svr;	
+    TmSvrCommunication &svr = iface_.svr;
     int timeInterval = 0;
     int lastTimeInterval = 1000;
-    	    	
+
     if (pub_reconnect_timeval_ms_ <= 0) {
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
@@ -156,7 +156,7 @@ void TmRosNode::svr_connect_recover()
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         lastTimeInterval = timeInterval;
         timeInterval = TmCommunication::get_current_time_in_ms() - startTimeMs;
-    }    
+    }
     if (ros::ok() && pub_reconnect_timeval_ms_ >= 0) {
         ROS_DEBUG_STREAM("0 sec\nTM_ROS: (TM_SVR): connect" << (int)pub_reconnect_timeout_ms_ << "ms)...");
         svr.connect_socket("ethernet slave",pub_reconnect_timeout_ms_);

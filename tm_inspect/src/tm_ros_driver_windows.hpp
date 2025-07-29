@@ -30,15 +30,17 @@ using std::chrono::system_clock;
 ** Namespaces
 *****************************************************************************/
 QT_BEGIN_NAMESPACE
+
 namespace Ui { class MainWindow; }
+
 QT_END_NAMESPACE
 
 /*****************************************************************************
 ** Class
 *****************************************************************************/
 class RosPage : public QThread {
- Q_OBJECT
- 
+  Q_OBJECT
+
 public:
   RosPage();
   ~RosPage();
@@ -60,14 +62,13 @@ private:
   void initial_subscriber();
   void initial_client();
   std::string current_time();
-  
+
 signals:
   void send_ui_feed_back_status(tm_msgs::FeedbackState msg);
   void send_to_ui_list(std::string);
-  
+
 private slots:
   void change_control_box_io_button();
-  
 };
 
 class MainWindow : public QDialog {
@@ -92,12 +93,12 @@ private:
   void set_text_manual_auto(int isValue, QLabel* label);
   void set_text_int(int isValue, QLabel* label);
   void set_text_zero_false(int isZero, QLabel* label);
-  void int_base_format_change(quint32 msg, QLabel* label, int base); 
-  void initial_link_ctrl_label();    
-  void initial_status_ctrl_label();      
+  void int_base_format_change(quint32 msg, QLabel* label, int base);
+  void initial_link_ctrl_label();
+  void initial_status_ctrl_label();
   void initial_ui_component();
   QString format_change(std::string msg);
-  
+
 signals:
   void change_control_box_io_button();
 
@@ -106,7 +107,6 @@ private slots:
   void send_to_ui_list(std::string);
   void click_change_control_box_io_button();
   void click_clear_response_button();
-  void quit();  
-
+  void quit();
 };
-#endif // MAINWINDOW_H
+#endif  // MAINWINDOW_H

@@ -30,5 +30,5 @@ int main(int argc, char **argv)
   ros::Subscriber sub = nh_demo_get.subscribe("feedback_states", 1000, TMmsgCallback);
   ros::spin();
 
-  return 0;  		  	  		
+  return 0;
 }

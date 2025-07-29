@@ -16,13 +16,13 @@ int main(int argc, char **argv)
   ros::ServiceClient client = nh_demo.serviceClient<tm_msgs::ConnectTM>("tm_diver/connect_tm");
   tm_msgs::ConnectTM srv;
 
-  //Request
+  // Request
   srv.request.server = srv.request.TMSVR;
   srv.request.reconnect = true;
   srv.request.timeout = 0;
   srv.request.timeval = 0;
 
-  if (client.call(srv))                             
+  if (client.call(srv))
   {
     if (srv.response.ok) ROS_INFO_STREAM("ConnectTM to robot");
     else ROS_WARN_STREAM("ConnectTM to robot , but response not yet ok ");
@@ -32,6 +32,6 @@ int main(int argc, char **argv)
     ROS_ERROR_STREAM("Error ConnectTM to robot");
     return 1;
   }
-	
+
   return 0;
 }

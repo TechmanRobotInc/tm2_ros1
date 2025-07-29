@@ -10,13 +10,13 @@
 #include "tm_msgs/SetPositions.h"
 
 int main(int argc, char **argv)
-{  
-  ros::init(argc, argv, "demo_set_positions");      
+{
+  ros::init(argc, argv, "demo_set_positions");
   ros::NodeHandle nh_demo; 
   ros::ServiceClient client = nh_demo.serviceClient<tm_msgs::SetPositions>("tm_driver/set_positions");
   tm_msgs::SetPositions srv;
-  	
-  //Request
+
+  // Request
   srv.request.motion_type = tm_msgs::SetPositions::Request::PTP_J;
   srv.request.positions.push_back(0);
   srv.request.positions.push_back(0);
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
   srv.request.blend_percentage = 10;
   srv.request.fine_goal  = false;
 
-  if (client.call(srv))                             
+  if (client.call(srv))
   {
     if (srv.response.ok) ROS_INFO_STREAM("SetPositions to robot");
     else ROS_WARN_STREAM("SetPositions to robot , but response not yet ok ");
@@ -39,6 +39,6 @@ int main(int argc, char **argv)
     ROS_ERROR_STREAM("Error SetPositions to robot");
     return 1;
   }
- 	
+
   return 0;
 }

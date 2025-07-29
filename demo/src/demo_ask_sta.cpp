@@ -11,31 +11,31 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "demo_ask_sta");      
+  ros::init(argc, argv, "demo_ask_sta");
   ros::NodeHandle nh_demo; 
   ros::ServiceClient client = nh_demo.serviceClient<tm_msgs::AskSta>("tm_driver/ask_sta");
   tm_msgs::AskSta srv;
 
-  //Request  
+  // Request  
   srv.request.subcmd = "00";
   srv.request.subdata = "";
   srv.request.wait_time = 1;
 
   // Wait for the result.
-  if (client.call(srv))                             
+  if (client.call(srv))
   {
     if (srv.response.ok) {
-    	ROS_INFO_STREAM("AskSta to robot: subcmd is " << srv.response.subcmd << ", subdata is " << srv.response.subdata); 
-    }    	
-    else { 
-    	ROS_WARN_STREAM("AskSta to robot , but response not yet ok ");
-    }    	
+        ROS_INFO_STREAM("AskSta to robot: subcmd is " << srv.response.subcmd << ", subdata is " << srv.response.subdata); 
+    }
+    else {
+        ROS_WARN_STREAM("AskSta to robot , but response not yet ok ");
+    }
   }
   else
   {
     ROS_ERROR_STREAM("Error AskSta to robot");
     return 1;
   }
- 	
+
   return 0;
 }

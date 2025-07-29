@@ -13,12 +13,12 @@
 #include <geometry_msgs/PoseStamped.h>
 #include <tf/tf.h>
 #include <tf/transform_broadcaster.h>
-//#include <visualization_msgs/InteractiveMarkerUpdate.h>
+// #include <visualization_msgs/InteractiveMarkerUpdate.h>
 
-//#include <boost/chrono/chrono.hpp>
-//#include <boost/thread/thread.hpp>
-//#include <boost/thread/mutex.hpp>
-//#include <boost/thread/condition_variable.hpp>
+// #include <boost/chrono/chrono.hpp>
+// #include <boost/thread/thread.hpp>
+// #include <boost/thread/mutex.hpp>
+// #include <boost/thread/condition_variable.hpp>
 
 #include "tm_driver/tm_pose_conversion.h"
 
@@ -32,7 +32,7 @@
 #include "tm_msgs/SendScript.h"
 #include "tm_msgs/SetEvent.h"
 #include "tm_msgs/SetIO.h"
-//#include "tm_msgs/SetPayload"
+// #include "tm_msgs/SetPayload"
 #include "tm_msgs/SetPositions.h"
 #include "tm_msgs/AskSta.h"
 
@@ -78,7 +78,7 @@ protected:
         sensor_msgs::JointState joint_msg;
         geometry_msgs::PoseStamped tool_pose_msg;
 
-        //tf::Transform transform;
+        // tf::Transform transform;
         tf::TransformBroadcaster tfbc;
 
         tm_msgs::SvrResponse svr_msg;
@@ -160,7 +160,7 @@ private:
     void reorder_traj_joints(trajectory_msgs::JointTrajectory &traj);
     bool is_start_positions_match(const trajectory_msgs::JointTrajectory &traj, double eps);
     void set_result(int32_t err_code, const std::string &err_str);
-    //void print_traj(const trajectory_msgs::JointTrajectory &traj);
+    // void print_traj(const trajectory_msgs::JointTrajectory &traj);
 
     void set_pvt_traj(TmPvtTraj &pvts, const trajectory_msgs::JointTrajectory &traj);
     void traj_action(TmPvtTraj pvts);

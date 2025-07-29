@@ -10,18 +10,18 @@
 #include "tm_msgs/SetEvent.h"
 
 int main(int argc, char **argv)
-{  
+{
   ros::init(argc, argv, "demo_set_event");      
   ros::NodeHandle nh_demo; 
   ros::ServiceClient client = nh_demo.serviceClient<tm_msgs::SetEvent>("tm_driver/set_event");
   tm_msgs::SetEvent srv;
-  	
-  //Request
+
+  // Request
   srv.request.func = tm_msgs::SetEvent::Request::STOP;
   srv.request.arg0 = 0;
   srv.request.arg1 = 0;
 
-  if (client.call(srv))                             
+  if (client.call(srv))
   {
     if (srv.response.ok) ROS_INFO_STREAM("SetEvent to robot");
     else ROS_WARN_STREAM("SetEvent to robot , but response not yet ok ");
@@ -31,6 +31,6 @@ int main(int argc, char **argv)
     ROS_ERROR_STREAM("Error SetEvent to robot");
     return 1;
   }
-	
+
   return 0;
 }

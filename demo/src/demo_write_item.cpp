@@ -11,18 +11,18 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "demo_write_item");      
+  ros::init(argc, argv, "demo_write_item");
   ros::NodeHandle nh_demo; 
   ros::ServiceClient client = nh_demo.serviceClient<tm_msgs::WriteItem>("tm_driver/write_item");
   tm_msgs::WriteItem srv;
 
-  //Request  	
+  // Request
   srv.request.id = "123";
   srv.request.item = "Ctrl_DO0";
   srv.request.value = "1";
 
   // Check 
-  if (client.call(srv))                             
+  if (client.call(srv))
   {
     if (srv.response.ok) ROS_INFO_STREAM("WriteItem to robot");
     else ROS_WARN_STREAM("WriteItem to robot , but response not yet ok ");
@@ -32,6 +32,6 @@ int main(int argc, char **argv)
     ROS_ERROR_STREAM("Error WriteItem to robot");
     return 1;
   }
- 	
+
   return 0;
 }
