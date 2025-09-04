@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="model_name" default="tm5s"/>
-  <arg name="xacro_model" default="tm5s"/>
+  <arg name="model_name" default="tm7sx"/>
+  <arg name="xacro_model" default="tm7sx"/>
   <!-- Robot Pose from [x,y,z,roll,pitch,yaw] --> 
   <arg name="init_pose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 

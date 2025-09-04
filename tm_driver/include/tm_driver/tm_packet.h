@@ -207,10 +207,10 @@ public:
         return packet;
     }
 
-    static size_t find_packet_bytes_begin_index(const char *bytes, size_t max_len, size_t *pack_size = NULL);
-    static const char *find_packet_bytes(const char *bytes, size_t max_len, size_t *pack_size = NULL)
+    static size_t find_packet_bytes_begin_index(const char *bytes, size_t max_len, size_t *pack_size = nullptr);
+    static const char *find_packet_bytes(const char *bytes, size_t max_len, size_t *pack_size = nullptr)
     {
-        const char *p = NULL;
+        const char *p = nullptr;
         int ind_b = static_cast<int>(find_packet_bytes_begin_index(bytes, max_len, pack_size));
         if (ind_b < 0) {
             return p;
@@ -259,7 +259,7 @@ private:
     std::string _transaction_id;
     Mode _mode = Mode::RESPONSE;
     std::string _content_str;
-    const char *_content = NULL;
+    const char *_content = nullptr;
     size_t _len = 0;
     size_t _size = 0;
 

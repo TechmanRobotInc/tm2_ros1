@@ -90,7 +90,7 @@ If the user wants to know how to use the TM ROS driver, please visit the TM ROS 
         <td><a href="https://github.com/TechmanRobotInc/tm2_ros2/tree/humble">TM2 ROS2 Humble</a></td>
         <th>&#9711;</th>
         <th>&#9711;</th>
-        <th>humble</th>      
+        <th>humble</th>
     </tr>
 </table>
 
@@ -134,7 +134,7 @@ See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt pac
 
 > [!TIP]  
 > 1. Some software packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
-> 2. Some software packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for TM5S, TM7S, TM12S, TM14S, TM25S, and TM30S models.<br/>
+> 2. Some software packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
 <div> </div>
 
 ## __8. Contact us / Technical support__   [![Email](https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:tmsales@tm-robot.com)

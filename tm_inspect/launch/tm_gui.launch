@@ -9,8 +9,8 @@
 -->
 <launch>
 
-  <node pkg="tm_inspect" name="tm_gui" type="robot_ui" output="screen"/>  
-  
+  <node pkg="tm_inspect" name="tm_gui" type="robot_ui" output="screen"/>
+
   <!-- tm driver -->
   <node pkg="tm_driver" name="tm_driver" type="tm_driver" output="screen">
     <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />

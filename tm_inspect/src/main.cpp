@@ -10,7 +10,7 @@
 *****************************************************************************/
 int main(int argc, char *argv[])
 {
-  if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Warn))//Debug,Info,Warn,Error,Fatal
+  if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Warn))  // Debug,Info,Warn,Error,Fatal
   {
       ros::console::notifyLoggerLevelsChanged();
   }

@@ -1,7 +1,8 @@
 #include"../../include/tm_driver/tm_driver.h"
 
-class ListenNodeConnection{
- private:
+class ListenNodeConnection
+{
+private:
   std::thread listenNodeThread;
   std::thread checkListenNodeThread;
   TmDriver &iface;
@@ -29,7 +30,8 @@ class ListenNodeConnection{
   bool send_data();
   void check_is_on_listen_node();
   void build_sta_cmd();
- public:
+
+public:
   ListenNodeConnection(TmDriver &iface ,std::function<void(TmSctData)> sct_msg, std::function<void(std::string, std::string)> sta_msg, bool is_fake_);
   bool connect_tmsct(int timeout, int timeval, bool connect, bool reconnect);
   bool send_listen_node_script(const std::string id, const std::string script);

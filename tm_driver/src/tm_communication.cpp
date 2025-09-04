@@ -101,7 +101,7 @@ class TmCommRecv
 {
 private:
     TmSBuffer _sbuf;
-    char *_recv_buf = NULL;
+    char *_recv_buf = nullptr;
     int _recv_buf_len = 0;
     int _sockfd = -1;
     fd_set _masterfs;
@@ -129,7 +129,7 @@ public:
 
     bool setup(int sockfd);
 
-    TmCommRC spin_once(int timeval_ms, int *n = NULL);
+    TmCommRC spin_once(int timeval_ms, int *n = nullptr);
 
     void commit_spin_once() { _sbuf.pop_front(_rn); }
 
@@ -208,7 +208,7 @@ TmCommRC TmCommRecv::spin_once(int timeval_ms, int *n)
 
     _readfs = _masterfs; // re-init
 
-    rv = select(_sockfd + 1, &_readfs, NULL, NULL, &tv);
+    rv = select(_sockfd + 1, &_readfs, nullptr, nullptr, &tv);
 
     if (n) *n = 0;
     
@@ -250,7 +250,7 @@ TmCommRC TmCommRecv::spin_once(int timeval_ms, int *n)
 
 TmCommunication::TmCommunication(const char *ip, unsigned short port, int recv_buf_len)
     : _recv(nullptr)
-    , _ip(NULL)
+    , _ip(nullptr)
     , _port(port)
     , _recv_buf_len(recv_buf_len)
     , _sockfd(-1)
@@ -342,7 +342,7 @@ int TmCommunication::connect_with_timeout(int sockfd, const char *ip, unsigned s
     else {
         timeoutcount++; 
         // Wait for Connect OK by checking Write buffer
-        if ((rv = select(sockfd + 1, NULL, &wset, NULL, &tv)) < 0) {
+        if ((rv = select(sockfd + 1, nullptr, &wset, nullptr, &tv)) < 0) {
             return rv;
         }
         if (rv == 0) {
@@ -592,7 +592,7 @@ TmCommRC TmCommunication::recv_spin_once(int timeval_ms, int *n)
     int loop_cnt = 0;
     int pack_cnt = 0;
     int blen = 0;
-    char *bdata = NULL;
+    char *bdata = nullptr;
     size_t size = 0;
     size_t len = 0;
     bool ncs = false;

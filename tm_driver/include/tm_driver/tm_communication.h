@@ -21,10 +21,6 @@ private:
     int _optflag;
     TmCommRC _recv_rc;
     bool _recv_ready;
-    // bool _is_connected;
-
-private:
-    // TmPacket _packet;
     std::vector<TmPacket> _packet_list;
 
 public:
@@ -46,9 +42,9 @@ public:
 
     void close_socket();
 
-    TmCommRC send_bytes(const char *bytes, int len, int *n = NULL);
+    TmCommRC send_bytes(const char *bytes, int len, int *n = nullptr);
 
-    TmCommRC send_bytes_all(const char *bytes, int len, int *n = NULL);
+    TmCommRC send_bytes_all(const char *bytes, int len, int *n = nullptr);
 
     TmCommRC send_packet(TmPacket &packet, int *n = nullptr);
 
@@ -64,7 +60,7 @@ public:
 
     bool recv_init();
 
-    TmCommRC recv_spin_once(int timeval_ms, int *n = NULL);
+    TmCommRC recv_spin_once(int timeval_ms, int *n = nullptr);
 
     TmCommRC recv_rc() { return _recv_rc; }
 

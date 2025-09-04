@@ -85,7 +85,7 @@
 > roslaunch tm_gazebo <tm_robot_type>_gazebo.launch
 > ```
 >
-> The prefix `<tm_robot_type>` means the TM Robot type, available for the tm5s, tm7s, tm12s, tm14s, tm25s and tm30s models.<br/>
+> The prefix `<tm_robot_type>` means the TM Robot type, available for the tm5s, tm7s, tm12s, tm14s, tm25s and tm30s models, and (without the integrated camera) tm5sx, tm7sx, tm12sx, tm14sx, tm25sx, and tm30sx models.<br/>
 > For the TM12s Robot, simply replace the prefix accordingly to tm12s and type "``roslaunch tm_gazebo tm12s_gazebo.launch``".<br/>
 > :bookmark_tabs: Note1: If your real Robot is a TM5S, in the above example, you should type tm5s_gazebo.launch.<br/>
 > :bookmark_tabs: Note2: If the user needs to improve end-point simulation accuracy, please refer to the following section __Take generating a new Xacro file as an example__ of chapter 6 to modify the Xacro file.<br/>
