@@ -123,7 +123,7 @@ This chapter describes that the user can use a script program to extract specifi
 
 > [!TIP]   
 > 1. If the user just want to use the TM Robot nominal model to control the robot, the user can skip the rest of this chapter.<br/>
-> 2. The tm_description package contains description files and meshes, available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
+> 2. The tm_description package contains description files and meshes, available for __TM AI Cobot S__: _TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX_ models and __TM AI Cobot__: _TM5-900, TM5-700, TM12, TM14, TM16, TM20 ,TM5X-900, TM5X-700, TM12X, TM14X_ models.<br/>
 <div> </div>
 
 ## __7. Related ROS Projects and Tutorials Usage__
@@ -133,8 +133,8 @@ See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt pac
 - [Usage Guideline](./doc/tm_noetic_extension.md)
 
 > [!TIP]  
-> 1. Some software packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
-> 2. Some software packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
+> 1. Some software packages with ROS1 Noetic MoveIt configurations for TM Cobots are available for available for __TM AI Cobot S__: _TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX_ models and __TM AI Cobot__: _TM5-900, TM5-700, TM12, TM14, TM16, TM20 ,TM5X-900, TM5X-700, TM12X, TM14X_ models.<br/>
+> 2. Some software packages with ROS1 Noetic Gazebo 11 configurations for TM Cobots are available for available for __TM AI Cobot S__: _TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX_ models and __TM AI Cobot__: _TM5-900, TM5-700, TM12, TM14, TM16, TM20 ,TM5X-900, TM5X-700, TM12X, TM14X_ models.<br/>
 <div> </div>
 
 ## __8. Contact us / Technical support__   [![Email](https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:tmsales@tm-robot.com)

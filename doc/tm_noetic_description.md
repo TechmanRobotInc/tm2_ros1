@@ -14,7 +14,7 @@ This chapter describes that the user can use a script program to extract specifi
  >```
  > * <script_name> : Provide modify_xacro.py or modify_urdf.py two Python scripts program as options.
  > * <urdf_from>: The first argument represents the original URDF model form of the TM Robot, and the file part naming <sup>1</sup> is <urdf_from>.<br/>
- > <sup>1</sup> There are several built-in TM Robot nominal robot model settings, available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
+ > <sup>1</sup> Several built-in TM Robot nominal robot model settings are available for __TM AI Cobot S__: TM5S, TM7S, TM12S, TM14S, TM25S, TM30S and (without integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX models; and for __TM AI Cobot__: TM5-900, TM5-700, TM12, TM14, TM16, TM20 and (without integrated camera) TM5X-900, TM5X-700, TM12X, TM14X models.<br/>
  > For example, select your real robot type as the input nominal model form. If your TM robot is TM12S, then the user can type tm12s as the <urdf_from>.<br/>
  > * <urdf_gen>: The second argument means the newly generated URDF model form of the TM Robot, and the file <sup>2</sup> name is <urdf_gen>.<br/>
  > <sup>2</sup> For example, if the user names it test and select modify_xacro.py as script program, a test.urdf.xacro robot description file will be generated.<br/>

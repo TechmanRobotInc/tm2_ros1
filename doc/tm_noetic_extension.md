@@ -42,7 +42,7 @@
 > roslaunch <tm_robot_type>_moveit_config <tm_robot_type>_moveit_planning_execution.launch sim:=True
 > ```
 >
->> The prefix `<tm_robot_type>` means the TM Robot type, available for tm5s, tm7s, tm12s, tm14s, tm25s, tm30s, and (without the integrated camera) tm5sx, tm7sx, tm12sx, tm14sx, tm25sx, and tm30sx models.
+>> The prefix __<tm_robot_type>__ means the TM Robot type, available for (TM AI Cobot S) __tm5s__, __tm7s__, __tm12s__, __tm14s__, __tm25s__, __tm30s__, __tm5sx__, __tm7sx__, __tm12sx__, __tm14sx__, __tm25sx__, __tm30sx__ models; and for (TM AI Cobot) __tm5-900__, __tm5-700__, __tm12__, __tm14__, __tm16__, __tm20__, __tm5x-900__, __tm5x-700__, __tm12x__, __tm14x__ models.<br/>
 >
 > Taking the TM12S robot as an example, use the commands introduced above, by typing
 > ```bash
@@ -65,7 +65,7 @@
 >> The parameter `<robot_ip_address>` means the IP address of the TM Robot.<br/>
 >
 > Note: When you have finished, press CTRL + C in all terminal windows to shut everything down.<br/>
-> :bookmark_tabs: Note1: There are several built-in TM Robot nominal robot model settings, available for TM5S, TM7S, TM12S, TM14S, TM25S, TM30S, and (without the integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, and TM30SX models.<br/>
+> :bookmark_tabs: Note1: Several built-in TM Robot nominal robot model settings are available for __TM AI Cobot S__: TM5S, TM7S, TM12S, TM14S, TM25S, TM30S and (without integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX models; and for __TM AI Cobot__: TM5-900, TM5-700, TM12, TM14, TM16, TM20 and (without integrated camera) TM5X-900, TM5X-700, TM12X, TM14X models.<br/>
 > :bookmark_tabs: Note2: In MoveIt planning_context.launch, TM Robot set the default to read the Xacro file, such as _TM5S_ model, to read the file _tm5s.urdf.xacro_ into robot_description or such as _TM12S_ model, to read the file _tm12s.urdf.xacro_ into robot_description. If the user wants to use the specific model parameters instead of the nominal model to control the robot, please go back to the section __6. Generate your TM Robot-Specific Kinematics Parameters Files__ to modify the Xacro file.<br/>
 > :bookmark_tabs: Note3: __Running two tm ros drivers at the same IP address is not allowed.__ Since the tm driver node has been written into the moveit launch file, there is no need to execute _rosrun tm_driver tm_driver <robot_ip_address>_.<br/>
 
@@ -85,7 +85,8 @@
 > roslaunch tm_gazebo <tm_robot_type>_gazebo.launch
 > ```
 >
-> The prefix `<tm_robot_type>` means the TM Robot type, available for the tm5s, tm7s, tm12s, tm14s, tm25s and tm30s models, and (without the integrated camera) tm5sx, tm7sx, tm12sx, tm14sx, tm25sx, and tm30sx models.<br/>
+>> The prefix __<tm_robot_type>__ means the TM Robot type, available for (TM AI Cobot S) __tm5s__, __tm7s__, __tm12s__, __tm14s__, __tm25s__, __tm30s__, __tm5sx__, __tm7sx__, __tm12sx__, __tm14sx__, __tm25sx__, __tm30sx__ models; and for (TM AI Cobot) __tm5-900__, __tm5-700__, __tm12__, __tm14__, __tm16__, __tm20__, __tm5x-900__, __tm5x-700__, __tm12x__, __tm14x__ models.<br/>
+>
 > For the TM12s Robot, simply replace the prefix accordingly to tm12s and type "``roslaunch tm_gazebo tm12s_gazebo.launch``".<br/>
 > :bookmark_tabs: Note1: If your real Robot is a TM5S, in the above example, you should type tm5s_gazebo.launch.<br/>
 > :bookmark_tabs: Note2: If the user needs to improve end-point simulation accuracy, please refer to the following section __Take generating a new Xacro file as an example__ of chapter 6 to modify the Xacro file.<br/>
