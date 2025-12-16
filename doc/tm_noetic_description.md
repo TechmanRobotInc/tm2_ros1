@@ -1,5 +1,5 @@
 # __Generate your TM Robot-Specific Kinematics Parameters Files__
-Real kinematic values vary from TM robot to another one as each robot is calibrated at the factory.<br/>
+Real kinematic values vary from one TM robot to another as each robot is calibrated at the factory.<br/>
 This chapter describes that the user can use a script program to extract specific kinematic values from your TM robot. The python script function automatically generates a new Xacro robot model description file using a specific set of commands.
 > If the user just wants to use the TM Robot nominal model to control the robot, the user can skip the rest of this chapter.<br/>
 
@@ -14,10 +14,10 @@ This chapter describes that the user can use a script program to extract specifi
  >```
  > * <script_name> : Provide modify_xacro.py or modify_urdf.py two Python scripts program as options.
  > * <urdf_from>: The first argument represents the original URDF model form of the TM Robot, and the file part naming <sup>1</sup> is <urdf_from>.<br/>
- > <sup>1</sup> Several built-in TM Robot nominal robot model settings are available for __TM AI Cobot S__: TM5S, TM7S, TM12S, TM14S, TM25S, TM30S and (without integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX models; and for __TM AI Cobot__: TM5-900, TM5-700, TM12, TM14, TM16, TM20 and (without integrated camera) TM5X-900, TM5X-700, TM12X, TM14X models.<br/>
+ > <sup>1</sup> Several built-in TM Robot nominal robot model settings are available for __TM AI Cobot S__: TM5S, TM6S, TM7S, TM12S, TM14S, TM20S, TM25S, TM30S and (without integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX models; and for __TM AI Cobot__: TM5-900, TM5-700, TM12, TM14, TM16, TM20 and (without integrated camera) TM5X-900, TM5X-700, TM12X, TM14X models.<br/>
  > For example, select your real robot type as the input nominal model form. If your TM robot is TM12S, then the user can type tm12s as the <urdf_from>.<br/>
  > * <urdf_gen>: The second argument means the newly generated URDF model form of the TM Robot, and the file <sup>2</sup> name is <urdf_gen>.<br/>
- > <sup>2</sup> For example, if the user names it test and select modify_xacro.py as script program, a test.urdf.xacro robot description file will be generated.<br/>
+ > <sup>2</sup> For example, if the user names it test and selects modify_xacro.py as the script program, a test.urdf.xacro robot description file will be generated.<br/>
  >
  > The Python script for more specific arguments is used as follows:
  >```bash
@@ -30,10 +30,10 @@ This chapter describes that the user can use a script program to extract specifi
 
 
 ## &sect; Create with specific kinematic parameters of the local TM Robot
-> :bulb: Do you run the driver to maintain the connection with TM Robot, make sure that TM Robot's operating software (TMflow) network settings are ready and the Listen node is running.<br/>
+> :bulb: Do you run the driver to maintain the connection with TM Robot, make sure that TM Robot's operating software (TMflow) network settings are ready, and the Listen node is running.<br/>
 > <br/>
 > * #### __Take generating a new Xacro file as an example__
-> The following steps describe how to import specific kinematic values using a real TM12S Robot following the procedure below, and select the corresponding type tm12s as an example of <urdf_from>.<br/>
+> The following steps describe how to import specific kinematic values using a real TM12S Robot, following the procedure below, and select the corresponding type tm12s as an example of <urdf_from>.<br/>
 >
 > 1. Terminal 1: Startup ROS core and type<br/>
 ``roscore``<br/>
@@ -56,7 +56,7 @@ This chapter describes that the user can use a script program to extract specifi
 > cd src/tm_description/scripts
 > python3 modify_xacro.py tm12s user_defined
 > ```
-> When this procedure is completed, the user can find that the newly generated named robot description file has been saved, e.g."``user_defined.urdf.xacro``".<br/>
+> When this procedure is completed, the user can find that the newly generated named robot description file has been saved, e.g.,"``user_defined.urdf.xacro``".<br/>
 > 
 > 4. Next, the user must modify the filename part of the default pre-built nominal robot model in tm12s.urdf.xacro to a newly generated robot model description naming file.<br/>
 > ```bash

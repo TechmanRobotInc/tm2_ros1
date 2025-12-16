@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>tm_description</name>
-  <version>2.1.0</version>
+  <version>2.1.1</version>
   <description>
     URDF description for the TM AI Cobot and TM AI Cobot S-Series
   </description>
