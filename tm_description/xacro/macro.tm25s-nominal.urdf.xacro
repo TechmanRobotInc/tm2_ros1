@@ -16,12 +16,12 @@
     wrist_1_joint_velocity_limit:=${radians(195)}
     wrist_2_joint_velocity_limit:=${radians(210)}
     wrist_3_joint_velocity_limit:=${radians(225)}
-    shoulder_1_joint_effort_limit:=${750}
-    shoulder_2_joint_effort_limit:=${750}
-    elbow_joint_effort_limit:=${350}
-    wrist_1_joint_effort_limit:=${350}
-    wrist_2_joint_effort_limit:=${170}
-    wrist_3_joint_effort_limit:=${45}
+    shoulder_1_joint_effort_limit:=${1070}
+    shoulder_2_joint_effort_limit:=${1070}
+    elbow_joint_effort_limit:=${459}
+    wrist_1_joint_effort_limit:=${304}
+    wrist_2_joint_effort_limit:=${157}
+    wrist_3_joint_effort_limit:=${54}
     safety_limits:=false safety_pos_margin:=0.15
     safety_k_position:=20">
 
