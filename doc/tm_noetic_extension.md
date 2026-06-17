@@ -10,8 +10,8 @@
 > source ./devel/setup.bash
 > ```
 > :bulb: Do you prepare the __TM Robot__ ready ? Make sure that TM Robot's operating software (__TMflow__) network settings are ready and the __Listen node__ is running. 
-> 
-> Then, run the driver to test whether the complete communication interface is properly working with TM Robot by typing 
+>
+> Then, run the driver to test whether the complete communication interface is working properly with the TM Robot by typing
 >
 >```bash
 > rosrun tm_driver tm_driver <robot_ip_address>
@@ -21,6 +21,7 @@
 > Now, the user can use a new terminal to run each ROS node or command, but don't forget to source the correct setup shell files as starting a new terminal.
 > Note: When you finish executing your developed scripts or motion commands through the TM ROS driver connection, press __CTRL + C__ in all terminal windows to shut everything down.
 
+---
 ## &sect; Usage with MoveIt
 >
 > See [Moveit tutorial](https://moveit.ros.org/install/) to install the MoveIt packages.<br/>
@@ -64,11 +65,12 @@
 >
 >> The parameter `<robot_ip_address>` means the IP address of the TM Robot.<br/>
 >
-> Note: When you have finished, press CTRL + C in all terminal windows to shut everything down.<br/>
+> **Note**: When you have finished, press CTRL + C in all terminal windows to shut everything down.<br/>
 > :bookmark_tabs: Note1: Several built-in TM Robot nominal robot model settings are available for __TM AI Cobot S__: TM5S, TM7S, TM12S, TM14S, TM25S, TM30S and (without integrated camera) TM5SX, TM7SX, TM12SX, TM14SX, TM25SX, TM30SX models; and for __TM AI Cobot__: TM5-900, TM5-700, TM12, TM14, TM16, TM20 and (without integrated camera) TM5X-900, TM5X-700, TM12X, TM14X models.<br/>
 > :bookmark_tabs: Note2: In MoveIt planning_context.launch, TM Robot set the default to read the Xacro file, such as _TM5S_ model, to read the file _tm5s.urdf.xacro_ into robot_description or such as _TM12S_ model, to read the file _tm12s.urdf.xacro_ into robot_description. If the user wants to use the specific model parameters instead of the nominal model to control the robot, please go back to the section __6. Generate your TM Robot-Specific Kinematics Parameters Files__ to modify the Xacro file.<br/>
-> :bookmark_tabs: Note3: __Running two tm ros drivers at the same IP address is not allowed.__ Since the tm driver node has been written into the moveit launch file, there is no need to execute _rosrun tm_driver tm_driver <robot_ip_address>_.<br/>
+> :bookmark_tabs: Note3: __Running two TM ROS drivers at the same IP address is not allowed.__ Since the tm driver node has been written into the moveit launch file, there is no need to execute _rosrun tm_driver tm_driver <robot_ip_address>_.<br/>
 
+---
 > __Usage with Gazebo Simulation__ 
 >
 > See [Gazebo tutorial](https://classic.gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros) to install the Gazebo packages.<br/>
@@ -79,7 +81,7 @@
 > The tm_gazebo package contains the Xacro model files to simulate the TM Robot in Gazebo.
 >
 > There are several built-in launch files that can be used to start the TM Robot simulated robot using the nominal Xacro robot model settings in Gazebo.
-> The common command's form to bring up the TM simulated robot in Gazebo as follows: 
+> The common command's form to bring up the TM simulated robot in Gazebo is as follows:
 >
 > ```bash
 > roslaunch tm_gazebo <tm_robot_type>_gazebo.launch
@@ -93,14 +95,14 @@
 
 > __Using Moveit! with Gazebo Simulator__
 >
->  You can also use MoveIt! to control the simulated robot which is configured to run alongside Gazebo.
+>  You can also use MoveIt! to control the simulated robot, which is configured to run alongside Gazebo.
 > 
 > 1. Launch the Gazebo simulation and load the ros_control controllers:
 > ```bash
 > roslaunch tm_gazebo <tm_robot_type>_gazebo.launch
 > ```
 > After the Gazebo simulator is running, proceed to the next command to launch moveit!.
-> 
+>
 > 2. Launch the combined of moveit! and Gazebo to allow motion planning plugin run:
 > ```bash
 > roslaunch <tm_robot_type>_moveit_config <tm_robot_type>_moveit_planning_execution_gazebo.launch
@@ -112,7 +114,7 @@
 ``cd <workspace>``<br/>
 ``source ./devel/setup.bash``<br/>
 ``roslaunch tm_gazebo tm12s_gazebo.launch``<br/>
-> 
+>
 > 2. In a new terminal 2: Running with moveit!<br/>
 ``roslaunch tm12s_moveit_config tm12s_moveit_planning_execution_gazebo.launch``<br/>
 >

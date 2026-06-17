@@ -1,16 +1,18 @@
 # __TM ROS Driver Usage and Installation__
 The TM ROS driver is designed to interface the TM Robot's operating software (__TMflow2__) with the Robot Operating System (ROS) so that program developers and researchers can build and reuse their own programs to control the TM robot externally.
 
+---
 ## __1. Usage and Installation__
 > * This manual is for <u>**ROS1 Noetic**</u> vs _TMflow2_ version.<br/>
 >> :bulb: The operation interface of _TMflow2_: Navigate to __≡__ and click to expand the function menu, including the icons __Login/Logout__, __Connect__, __View__, __Run Setting__, __Project__, __Configuration__, and __System__. Please refer to _Software Manual TMflow_ ([SW2.14_Rev1.00](https://www.tm-robot.com/zh-hant/wpfd_file/software-manual-tmflow_sw2-14_rev1-00_en/)).<br/>
 >
-> * Just clone the TM ROS driver of the git repository into your working directory and then build it.<br/>
-> * The user can directly return to "__5. TM External GUI Debugging and Demonstration__" introduced above: then refer to steps 1 to 4 of this chapter __&sect; Use the demo code and drivers on an external Linux PC__.<br/>
+> * Just clone the TM ROS driver from the git repository into your working directory and then build it.<br/>
+> * The user can directly return to "__[4. TM Program Script Demonstration](./tm_noteic_demo.md)__" introduced above: then refer to steps 1 to 4 of this chapter __&sect; Use the demo code and drivers on an external Linux PC__.<br/>
 >
-> &#10148;  After installing the correct ROS version of the computer, the next step is to ensure that your hardware, control computer, and TM Robot are all properly configured to communicate with each other. See below to make sure the network settings on your computer are correct, the TM Robot's operating software (_TMflow 2_) network settings are ready and the __Listen node__ is running.<br/>
+> &#10148;  After installing the correct ROS version on the computer, the next step is to ensure that your hardware, control computer, and TM Robot are all properly configured to communicate with each other. See below to make sure the network settings on your computer are correct, the TM Robot's operating software (_TMflow 2_) network settings are ready, and the __Listen node__ is running.<br/>
 <div> </div>
 
+---
 ## __2. TMflow Listen node setup__
 The __Listen node__: a socket server can be established and be connected with ROS by an external device to communicate according to the [defined protocol](https://assets.omron.eu/downloads/manual/en/v1/i689_tm_collaborative_robot_software_manual_tmflow_version_2_operation_manual_en.pdf). The user can make the robot communicate with the user's ROS (remote) computer equipment through a wired network when all the network parameters in the _Network setting_ are set.<br/>
 >
@@ -20,20 +22,20 @@ The __Listen node__: a socket server can be established and be connected with RO
 
    <img src="./figures/listen_task.png" width="1000" height="500">
 
-> 2. Set the `Network` settings: mouse-click to enter the page of __System &rArr; Network__ in order.  
-> &#10148; Example: Set the Subnet mask: 255.255.255.0 and IP address 192.168.10.2 <br/> 
->> **Note**: Set the network mask, and the communication with the TM Robot must be in the set domain.<br/> 
+> 2. Set the __Network Setting__: mouse-click to enter the page of __System &rArr; Network__ in order.
+> &#10148; Example: Set the Subnet mask: 255.255.255.0 and IP address 192.168.10.2 <br/>
+>> **Note**: Set the network mask, and the communication with the TM Robot must be in the set domain.<br/>
 > 
 <br/>
 
    <img src="./figures/network_setting.png" width="1000" height="500">
 
-> 3. Set the __Ethernet Slave__ `Data Table Setting` item: mouse-click to enter the page of __Setting &rArr; Connection &rArr; Ethernet Slave__ in order.<br/>  
-> &#10148;  We recommend _one easy method_ <sup>1</sup> to set the __Ethernet Slave__ `Data Table setting` to directly import the software package.<br/>  
-> <sup>1</sup> See [TM ROS Driver vs TMflow Software Usage: Import Data Table Setting](https://github.com/TechmanRobotInc/TM_Export).<br/>   
+> 3. Set the __Ethernet Slave__ `Data Table Setting`: mouse-click to enter the page of __Setting &rArr; Connection &rArr; Ethernet Slave__ in order.<br/>
+> &#10148;  We recommend _one easy method_ <sup>1</sup> to set the __Ethernet Slave__ `Data Table setting` to directly import the software package.<br/>
+> <sup>1</sup> See [TM ROS Driver vs TMflow Software Usage: Import Data Table Setting](https://github.com/TechmanRobotInc/TM_Export).<br/>
 >
-> A previous traditional method as follows:  (Note: TMflow software version changes may have slightly different settings.)  
-The user can manually click the `Data Table Setting` <sup>2</sup> item and check the following boxes as item _predefined_ <sup>3</sup> to receive/send specific data: 
+> A previous traditional method as follows:  (Note: TMflow software version changes may have slightly different settings.)
+The user can manually click the `Data Table Setting` <sup>2</sup> item and check the following boxes as item _predefined_ <sup>3</sup> to receive/send specific data:
 >
 >       - [x] Robot_Error
 >       - [x] Project_Run
@@ -60,15 +62,16 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 >       - [x] END_DI0~DI2
 >       - [x] END_AI0
 >
->    <sup>2</sup> <u>Turn off</u> Ethernet Slave. Let "STATUS:   __Disable__" displayed on the Ethernet Slave setting page, then click `Data Table Setting` to enter the next page for related settings.  
+>    <sup>2</sup> <u>Turn off</u> Ethernet Slave. Let "STATUS: __Disable__" displayed on the Ethernet Slave setting page, then click `Data Table Setting` to enter the next page for related settings.
 >
 <br/>
 
    <img src="./figures/manual_set_specified_transmit_file.png" width="1000" height="360">
 
 >    <sup>3</sup> The checked items listed above must <u>all</u> be selected for TM2 ROS setting.
+>> **Note**: Set the `Commounicate Mode`: __BINARY__<br/>
 >
->    When you need to check more about the __maximum, minimum, and average calculation properties of joint torque__ <sup>4</sup> listed below, these _three checked items_ can be checked individually or all of them, please leave them unchecked when not in use.
+>    When you need to check more about the __maximum, minimum, and average calculation properties of joint torque__ <sup>4</sup> listed below, these _three checked items_ can be checked individually or all of them. Please leave them unchecked when not in use.
 >
 >       - [x] Joint_Torque_Average
 >       - [x] Joint_Torque_Min
@@ -76,7 +79,7 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 >
 >    <sup>4</sup> This function requires <u>TMflow 2.16 or later</u> versions to support.
 >
-> 4. Enable the __Ethernet Slave__ settings: mouse-click to enable or disable TM Ethernet Slave. Once enabled, the robot establishes a Socket server to send the robot status and data to the connected clients and permissions to access specific robot data.<br/>
+> 4. Set the __Communication__ `Ethernet Slave setting`: mouse-click to enable or disable TM Ethernet Slave. Once enabled, the robot establishes a Socket server to send the robot status and data to the connected clients and permissions to access specific robot data.<br/>
 > Mouse-click to enable the `Ethernet Slave` setting and let `STATUS:` &rArr; __`Enable`__. 
 >
 <br/>
@@ -90,7 +93,7 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 
 
 ###  &sect; __Remote connection to TM ROBOT__
-> Static IP of remote connection network settings through the wired network.<br/> 
+> Static IP of the remote connection network settings through the wired network.<br/>
 >
 > 1. Set the wired network of the user's (remote) Ubuntu computer by mouse-click on the top right of the desktop &rArr; Click on "__Wired Settings__" &rArr; Click on the gear icon &rArr; In the IPv4 feature options, click on "Manual" in order.<br/> 
 <br/>
@@ -104,7 +107,7 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
    <img src="./figures/user_remote_IP_example.png" width="1000" height="500">
 
 > 3. Check Internet connection: start a terminal to test the connectivity with the target host _TM ROBOT_, by typing ping 192.168.10.2
-> 
+>
 <br/>
 
    ![ping_target_host](./figures/ping_target_host.png)
@@ -112,7 +115,7 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 >> :bulb: **Tip**: Remember to reconfigure the network settings due to <u>static IP changes</u> or <u>replacement of the ROS control PC</u>.<br/>
 >> As mentioned above, a valuable debugging tool is your operating system's <u>ping</u> command. If nothing appears to happen or an error is thrown, the robot cannot be accessed from your computer. Please go back to the top of this chapter and re-operate in the order of instructions.<br/>
 >> If you are an experienced user, you may just need to <u>turn off</u> &rArr; <u>turn on</u> the gear icon of "__Wired Settings__" on your computer or to <u>turn off</u> &rArr; <u>turn on</u> the "__Ethernet Slave Data Table__" setting of the robot to reconfigure the hardware settings.<br/>
-> 
+>
 
 
 ###  &sect; Common usage of TM ROS driver 
@@ -125,7 +128,7 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 > cd <workspace>
 > source ./devel/setup.bash
 > ```
-> Then, run the driver to maintain the connection with TM Robot by typing 
+> Then, run the driver to test whether the complete communication interface is working properly with the TM Robot by typing
 >
 >```bash
 > rosrun tm_driver tm_driver <robot_ip_address>
@@ -138,23 +141,25 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 > **Note**: When you have finished, press CTRL + C in all terminal windows to shut everything down.<br/>
 <div> </div>
 
+---
 ## __3. TMflow Vision node setup and prerequisites for using TM ROS Vision__
-> The __Vision node__ provides the creation of a plane with fixed-point type, servo type, and object type as well as a variety of AOI identification functions.
+> The __Vision node__ provides the creation of a plane with fixed-point type, servo type, and object type, as well as a variety of AOI identification functions.
 > TM ROS Driver can receive the source image from the vision job (with External Detection) and publish it as a ROS topic.<br/>
 > The following describes how the user can acquire image data through TMvision&trade; of TM Robot. **(Built-in Vision System)**
 
 ### &sect; __Prerequisites for using TM ROS Vision__
-  
+
 >
 > __Dependencies__
 >
 > - ROS1 Noetic
+>
 > - Python packages:
 >   1. flask
 >   2. waitress
 >   3. opencv-python==3.4.13.47 (Minimum)
 >   4. numpy
->   5. datetime  
+>   5. datetime
 >
 >    For example, install Python3 packages: 
 >      *  pip3 install flask
@@ -173,21 +178,21 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 > Terminal 1: Startup ROS core and type<br/>
 > ``roscore``<br/>
 >
-> In a new terminal 2: Under the environment settings have been finished with your workspace`<workspace>`, then type
+> In a new terminal 2: Under the environment settings have been finished with your `<workspace>`, then type
 >
 > ```bash
 > cd ~/<workspace> && source ./devel/setup.bash
 > python3 ./src/tm_image/script/image_talker.py
 > ```
 >
-> :bulb: The user can check whether the connection succeeds or not. When you proceed to the following steps introduced in the following text: step1 &rArr; step5 of § TMflow Vision node setup.
+> :bulb: The user can check whether the connection succeeds or not. When you proceed to the following steps introduced in the following text: steps 6 of § TMflow Vision node setup.
 
 
 ### &sect; __TMflow Vision node setup__
 
 > :bulb: Before going through the following steps, please build the TM ROS Vision driver node on your (remote) computer and then connect this (remote) computer to the local TM Robot computer.
 >
-> 1. Create a _Vision task_ project of __TMflow__ software, drag the __Vision node__  from  the __Node List__ menu (&rArr; Process &rArr; Vision) onto the project flow and then click the "__+__" to add your Vision Job, as shown below.<br/>
+> 1. Create a _Vision task_ project of __TMflow__ software, drag the __Vision node__  from  the __Node List__ menu (&rArr; Process &rArr; Vision) onto the project flow, and then click the "__+__" to add your Vision Job, as shown below.<br/>
 <br/>
 
   <img src="./figures/vision_task.png" width="500" height="360"> <img src="./figures/vision_task_2.png" width="500" height="360">
@@ -223,7 +228,7 @@ The user can manually click the `Data Table Setting` <sup>2</sup> item and check
 
 > 6. Don't forget to press the Play/Pause Button on the Robot Stick to start running this _Vision task_ project.
 >
->    Note: For more about __External Detection__, please refer to Software Manual TMvision([SW2.14_Rev1.00](https://www.tm-robot.com/zh-hant/wpfd_file/software-manual-tmvision_sw2-14_rev1-00_en/)).<br/>
+>    Note: For more about __External Detection__, please refer to Software Manual TMvision([SW2.14_Rev1.00](https://www.tm-robot.com/zh-hant/support/download-center/)).<br/>
 
 
 ###  &sect; TMflow Vision node usage

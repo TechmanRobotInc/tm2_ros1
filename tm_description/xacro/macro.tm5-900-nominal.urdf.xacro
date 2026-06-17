@@ -64,7 +64,7 @@
     <xacro:property name="iyy_4" value="${2563.079*unit_factor}" />
     <xacro:property name="iyy_5" value="${2563.079*unit_factor}" />
     <xacro:property name="iyy_6" value="${1383.811*unit_factor}" />
-    
+
     <xacro:property name="izz_1" value="${11970.081*unit_factor}" />
     <xacro:property name="izz_2" value="${212473.4246*unit_factor}" />
     <xacro:property name="izz_3" value="${36895.644*unit_factor}" />
